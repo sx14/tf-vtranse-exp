@@ -12,7 +12,7 @@ __C = edict()
 
 cfg = __C
 
-__C.DIR = '/home/yangxu/project/rd/'
+__C.DIR = '/media/sunx/Data/linux-workspace/python-workspace/'
 
 __C.DIR2 = '/home/jhmei/yangxu/'
 
