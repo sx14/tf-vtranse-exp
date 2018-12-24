@@ -3,15 +3,18 @@ import xlwt
 import h5py
 import json
 import cv2
+from model.config import cfg
+
 
 N_obj = 101
-train_file_path = '/home/yangxu/project/rd/' + 'dataset/VRD/json_dataset/annotations_train.json'
-test_file_path = '/home/yangxu/project/rd/' + 'dataset/VRD/json_dataset/annotations_test.json'
+
+train_file_path = cfg.DIR + 'dataset/VRD/json_dataset/annotations_train.json'
+test_file_path = cfg.DIR + 'dataset/VRD/json_dataset/annotations_test.json'
 file_path = [train_file_path, test_file_path]
-train_image_path = '/home/yangxu/project/rd/' + 'dataset/VRD/sg_dataset/sg_train_images/'
-test_image_path = '/home/yangxu/project/rd/' + 'dataset/VRD/sg_dataset/sg_test_images/'
+train_image_path = cfg.DIR + 'dataset/VRD/sg_dataset/sg_train_images/'
+test_image_path = cfg.DIR + 'dataset/VRD/sg_dataset/sg_test_images/'
 image_path = [train_image_path, test_image_path]
-save_path = '/home/yangxu/project/rd/' + 'vtranse/input/vrd_roidb.npz'
+save_path =cfg.DIR + 'vtranse/input/vrd_roidb.npz'
 
 for r in range(2):
 	file_path_use = file_path[r]

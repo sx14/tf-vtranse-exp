@@ -24,7 +24,7 @@ class imdb(object):
 output_dir = 'output/vgg16/vrd/default'
 tb_dir = 'output/vgg16/vrd/tb'
 N_obj = 101
-vg_roidb = np.load('vrd_roidb.npz')
+vg_roidb = np.load('tools/vrd_roidb.npz')
 roidb_temp = vg_roidb['roidb']
 roidb = roidb_temp[()]
 train_roidb = roidb['train_roidb']
