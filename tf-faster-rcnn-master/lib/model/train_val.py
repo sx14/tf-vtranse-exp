@@ -198,14 +198,20 @@ class SolverWrapper(object):
       self.net.fix_variables(sess, self.pretrained_model)
       print('Fixed.')
     else:
-      variables = tf.global_variables()
-      init = tf.global_variables_initializer()
-      sess.run(init)
+      variables1 = tf.global_variables()
+      # init = tf.global_variables_initializer()
+      # sess.run(init)
+
+      sess.run(tf.variables_initializer(variables1, name='init'))
+      var_keep_dic = self.get_variables_in_checkpoint_file(self.pretrained_model)
+      # Get the variables to restore, ignoring the variables to fix
+      variables = self.net.get_variables_to_restore(variables1, var_keep_dic)
+
       cls_score_var = [var for var in variables if 'cls_score' in var.name]
       bbox_pred_var = [var for var in variables if 'bbox_pred' in var.name]
       no_restore_var = cls_score_var + bbox_pred_var
       restore_var = [var for var in variables if var not in no_restore_var]
-      print('{0}'.format(restore_var))
+      # print('{0}'.format(restore_var))
       restorer = tf.train.Saver(var_list = restore_var)
       restorer.restore(sess, self.pretrained_model)
 

@@ -44,6 +44,8 @@ for i in range(len(roidb)):
 print('min_cls:{0}, max_cls:{1}'.format(min_cls, max_cls))
 for i in range(len(valroidb)):
 	valroidb[i]['gt_classes'] = valroidb[i]['gt_classes'] + 1
-	
-pretrained_model = 'output/vgg16/coco_2014_train+coco_2014_valminusminival/default/vgg16_faster_rcnn_iter_1190000.ckpt'
+
+# pretrained_model = 'data/imagenet_weights/vgg16.ckpt'
+# pretrained_model = 'output/vgg16/coco_2014_train+coco_2014_valminusminival/default/vgg16_faster_rcnn_iter_1190000.ckpt'
+pretrained_model = 'output/vgg16/voc_2007_trainval+voc_2012_trainval/default/vgg16_faster_rcnn_iter_110000.ckpt'
 train_net(net, vg_imdb, roidb, valroidb, output_dir, tb_dir, pretrained_model = pretrained_model, max_iters = 40000)
