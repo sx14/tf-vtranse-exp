@@ -2,20 +2,21 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import _init_paths
-from model.test import test_net_vg
-from model.config import cfg, cfg_from_file, cfg_from_list, get_output_dir, get_output_tb_dir
+#import _init_paths
+from lib.model.test import test_net_vg
+from lib.model.config import cfg, cfg_from_file, cfg_from_list, get_output_dir, get_output_tb_dir
 import argparse
 import pprint
 import numpy as np
 import sys
 
 import tensorflow as tf
-from nets.vgg16 import vgg16
+from lib.nets.vgg16 import vgg16
 
-output_dir = '/home/yangxu/tf-faster-rcnn/output/vgg16/vrd/vrd_dete_pred/dete_pred_vg.npz'
-save_path = '/home/yangxu/tf-faster-rcnn/output/vgg16/vrd/vrd_dete_pred/vrd_detected_box.npz'
-model_path = '/home/yangxu/tf-faster-rcnn/output/vgg16/vrd/default/res101_faster_rcnn_iter_80000.ckpt'
+output_dir = '../output/vgg16/vrd/vrd_dete_pred/dete_pred_vrd.npz'
+save_path = '../output/vgg16/vrd/vrd_dete_pred/vrd_detected_box.npz'
+#model_path = 'output/vgg16/vrd/default/res101_faster_rcnn_iter_80000.ckpt'
+model_path = '../output/vgg16/vrd/default/vgg16_faster_rcnn_iter_40000.ckpt'
 
 num_classes = 101
 vg_roidb = np.load('vrd_roidb.npz')

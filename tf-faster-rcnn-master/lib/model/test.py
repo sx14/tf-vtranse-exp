@@ -16,12 +16,12 @@ except ImportError:
 import os
 import math
 
-from utils.timer import Timer
-from utils.cython_nms import nms
-from utils.blob import im_list_to_blob
+from lib.utils.timer import Timer
+from lib.utils.cython_nms import nms
+from lib.utils.blob import im_list_to_blob
 
-from model.config import cfg, get_output_dir
-from model.bbox_transform import clip_boxes, bbox_transform_inv
+from lib.model.config import cfg, get_output_dir
+from lib.model.bbox_transform import clip_boxes, bbox_transform_inv
 
 def _get_image_blob(im):
   """Converts an image into a network input.

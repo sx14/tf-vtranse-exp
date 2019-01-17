@@ -13,7 +13,7 @@ from tensorflow.contrib.slim import losses
 from tensorflow.contrib.slim import arg_scope
 import numpy as np
 
-from nets.network import Network
+from lib.nets.network import Network
 from model.config import cfg
 
 class vgg16(Network):
