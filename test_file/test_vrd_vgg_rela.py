@@ -12,13 +12,13 @@ N_rela = cfg.VRD_NUM_RELA
 N_each_batch = cfg.VRD_BATCH_NUM_RELA
 
 index_sp = False
-index_cls = False
+index_cls = True
 
 vnet = VTranse()
 vnet.create_graph(N_each_batch, index_sp, index_cls, N_cls, N_rela)
 
 roidb_path = cfg.DIR + 'vtranse/input/vrd_rela_roidb.npz'
-model_path = cfg.DIR + 'vtranse/pred_para/vrd_vgg_rela/vrd_vgg0001.ckpt'
+model_path = cfg.DIR + 'vtranse/pred_para/vrd_vgg_rela/vrd_vgg0020.ckpt'
 save_path = cfg.DIR + 'vtranse/pred_res/vrd_rela_roidb.npz'
 
 roidb_read = read_roidb(roidb_path)

@@ -2,23 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a676200-747f-4258-a8ef-b1e0bc0bdd58" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/.idea/tf-faster-rcnn-master.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/tools/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/layer_utils/anchor_target_layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/layer_utils/anchor_target_layer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/layer_utils/proposal_layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/layer_utils/proposal_layer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/layer_utils/proposal_target_layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/layer_utils/proposal_target_layer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/layer_utils/proposal_top_layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/layer_utils/proposal_top_layer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/layer_utils/snippets.py" beforeDir="false" afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/layer_utils/snippets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/model/nms_wrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/model/nms_wrapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/model/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/model/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/nets/network.py" beforeDir="false" afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/nets/network.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/nets/vgg16.py" beforeDir="false" afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/lib/nets/vgg16.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tf-faster-rcnn-master/tools/get_vrd_vgg_rela_box.py" beforeDir="false" afterPath="$PROJECT_DIR$/tf-faster-rcnn-master/tools/get_vrd_vgg_rela_box.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_file/test_vrd_vgg_pred.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_file/test_vrd_vgg_pred.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_file/test_vrd_vgg_rela.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_file/test_vrd_vgg_rela.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tf-faster-rcnn-master/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tf-faster-rcnn-master/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tf-faster-rcnn-master/.idea/tf-faster-rcnn-master.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tf-faster-rcnn-master/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_file/train_vrd_vgg_rela.py" beforeDir="false" afterPath="$PROJECT_DIR$/train_file/train_vrd_vgg_rela.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,59 +21,55 @@
     <session id="589628210">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.0" value="3" />
+          <entry key="project.closed" value="12" />
+          <entry key="project.open.time.0" value="10" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="31" />
+          <entry key="py" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="31" />
+          <entry key="Python" value="79" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="31" />
+          <entry key="py" value="60" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="31" />
+          <entry key="Python" value="60" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/tools/train_vrd_dete_vgg.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-174">
-              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/tools/get_vrd_vgg_rela_box.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_file/eva_vrd_vgg_rela.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <caret line="5" column="65" lean-forward="true" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/lib/nets/network.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/ass_fun.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+            <state relative-caret-position="392">
+              <caret line="152" column="33" lean-forward="true" selection-end-line="467" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,7 +95,6 @@
         <option value="$PROJECT_DIR$/tf-faster-rcnn-master/lib/nms/__init__.py" />
         <option value="$PROJECT_DIR$/tf-faster-rcnn-master/tools/train_vrd_dete_vgg.py" />
         <option value="$PROJECT_DIR$/model/config.py" />
-        <option value="$PROJECT_DIR$/tf-faster-rcnn-master/tools/get_vrd_vgg_rela_box.py" />
         <option value="$PROJECT_DIR$/tf-faster-rcnn-master/lib/model/test.py" />
         <option value="$PROJECT_DIR$/tf-faster-rcnn-master/lib/nets/vgg16.py" />
         <option value="$PROJECT_DIR$/tf-faster-rcnn-master/lib/layer_utils/snippets.py" />
@@ -118,13 +104,18 @@
         <option value="$PROJECT_DIR$/tf-faster-rcnn-master/lib/layer_utils/anchor_target_layer.py" />
         <option value="$PROJECT_DIR$/tf-faster-rcnn-master/lib/layer_utils/proposal_target_layer.py" />
         <option value="$PROJECT_DIR$/tf-faster-rcnn-master/lib/nets/network.py" />
+        <option value="$PROJECT_DIR$/train_file/train_vrd_vgg_rela.py" />
+        <option value="$PROJECT_DIR$/test_file/test_vrd_vgg_rela.py" />
+        <option value="$PROJECT_DIR$/test_file/test_vrd_vgg_pred.py" />
+        <option value="$PROJECT_DIR$/tf-faster-rcnn-master/tools/get_vrd_vgg_rela_box.py" />
+        <option value="$PROJECT_DIR$/model/ass_fun.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="89" />
+    <option name="x" value="362" />
     <option name="y" value="24" />
-    <option name="width" value="1386" />
+    <option name="width" value="1375" />
     <option name="height" value="876" />
   </component>
   <component name="ProjectView">
@@ -142,25 +133,22 @@
             <path>
               <item name="vtranse" type="b2602c69:ProjectViewProjectNode" />
               <item name="vtranse" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="pred_para" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vtranse" type="b2602c69:ProjectViewProjectNode" />
               <item name="vtranse" type="462c0819:PsiDirectoryNode" />
-              <item name="tf-faster-rcnn-master" type="462c0819:PsiDirectoryNode" />
+              <item name="pred_res" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vtranse" type="b2602c69:ProjectViewProjectNode" />
               <item name="vtranse" type="462c0819:PsiDirectoryNode" />
-              <item name="tf-faster-rcnn-master" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="process" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vtranse" type="b2602c69:ProjectViewProjectNode" />
               <item name="vtranse" type="462c0819:PsiDirectoryNode" />
-              <item name="tf-faster-rcnn-master" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="test_file" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -170,16 +158,16 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tf-faster-rcnn-master" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/input" />
       <recent name="$PROJECT_DIR$/tf-faster-rcnn-master/output" />
       <recent name="$PROJECT_DIR$/tf-faster-rcnn-master/lib" />
       <recent name="$PROJECT_DIR$/tf-faster-rcnn-master/tools" />
-      <recent name="$PROJECT_DIR$/model" />
-      <recent name="$PROJECT_DIR$/tf-faster-rcnn-master/lib/nms" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tf-faster-rcnn-master/output/vgg16/coco_2014_train+coco_2014_valminusminival/default" />
@@ -197,7 +185,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.get_vrd_vgg_rela_box">
+  <component name="RunManager" selected="Python.eva_vrd_vgg_rela">
     <configuration name="eva_vrd_vgg_pred" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="vtranse_tf_exp" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -211,6 +199,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_file/eva_vrd_vgg_pred.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="eva_vrd_vgg_rela" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="vtranse_tf_exp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_file" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_file/eva_vrd_vgg_rela.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -240,7 +249,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="train_vrd_dete_vgg" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test_vrd_vgg_rela" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="vtranse_tf_exp" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -248,11 +257,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tf-faster-rcnn-master" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_file" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tf-faster-rcnn-master/tools/train_vrd_dete_vgg.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_file/test_vrd_vgg_rela.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -261,7 +270,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="vrd_process_dete" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="vrd_rela_process" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="vtranse_tf_exp" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -269,11 +278,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tf-faster-rcnn-master/tools" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/process" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tf-faster-rcnn-master/tools/vrd_process_dete.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/process/vrd_rela_process.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -283,16 +292,18 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.vrd_process_dete" />
-      <item itemvalue="Python.train_vrd_dete_vgg" />
-      <item itemvalue="Python.eva_vrd_vgg_pred" />
       <item itemvalue="Python.get_vrd_vgg_rela_box" />
+      <item itemvalue="Python.test_vrd_vgg_rela" />
+      <item itemvalue="Python.eva_vrd_vgg_pred" />
+      <item itemvalue="Python.vrd_rela_process" />
+      <item itemvalue="Python.eva_vrd_vgg_rela" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.eva_vrd_vgg_rela" />
+        <item itemvalue="Python.test_vrd_vgg_rela" />
+        <item itemvalue="Python.vrd_rela_process" />
         <item itemvalue="Python.get_vrd_vgg_rela_box" />
-        <item itemvalue="Python.train_vrd_dete_vgg" />
-        <item itemvalue="Python.vrd_process_dete" />
         <item itemvalue="Python.eva_vrd_vgg_pred" />
       </list>
     </recent_temporary>
@@ -323,13 +334,13 @@
     <frame x="65" y="-4" width="1375" height="904" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21893491" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19748521" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32983193" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35695878" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39819586" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38015464" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.28608248" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32983193" />
@@ -344,6 +355,22 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tf-faster-rcnn-master/lib/model/test.py</url>
+          <line>268</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/process/vrd_rela_process.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/ops/gradients_impl.py">
@@ -368,23 +395,6 @@
     <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/lib/nms/__init__.py" />
     <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/tools/_init_paths.py" />
     <entry file="file://$PROJECT_DIR$/model/config_sample.py" />
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/numpy/lib/npyio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="371" selection-start-line="371" selection-end-line="371" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_file/eva_vrd_vgg_pred.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/tools/vrd_process_dete.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1037">
@@ -392,36 +402,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/process/vrd_rela_process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/process/vrd_pred_process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/train_file/train_vrd_vgg_rela.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-173">
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/output/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" lean-forward="true" selection-start-column="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/output/__init__.py" />
     <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/lib/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -432,20 +413,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4386">
           <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/lib/model/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/tools/train_vrd_dete_vgg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-174">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -471,13 +438,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/lib/model/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/lib/layer_utils/proposal_layer.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -514,17 +475,147 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/tools/get_vrd_vgg_rela_box.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/lib/nets/network.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/tools/train_vrd_dete_vgg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="27" column="30" lean-forward="true" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_file/train_vg_vgg_rela.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/tools/train_vg_dete_vgg.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pretrained_para/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/vg_rela_process.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_file/train_vg_vgg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/vrd_pred_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_file/train_vrd_vgg.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/net/vtranse_vgg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3111">
+          <caret line="201" column="26" selection-start-line="201" selection-start-column="26" selection-end-line="201" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_file/train_vrd_vgg_rela.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/client/session.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="1347" column="13" selection-start-line="1347" selection-start-column="13" selection-end-line="1347" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/numpy/lib/npyio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="371" selection-start-line="371" selection-end-line="371" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/tensorflow/python/pywrap_tensorflow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="942">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/lib/model/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="312" column="13" selection-start-line="312" selection-start-column="13" selection-end-line="312" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_file/test_vg_vgg_pred.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tf-faster-rcnn-master/tools/get_vrd_vgg_rela_box.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_file/test_vrd_vgg_pred.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/process/vrd_rela_process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="57" column="28" lean-forward="true" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_file/eva_vrd_vgg_pred.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_file/test_vrd_vgg_rela.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="47" column="17" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/ass_fun.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="152" column="33" lean-forward="true" selection-end-line="467" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_file/eva_vrd_vgg_rela.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="5" column="65" lean-forward="true" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
         </state>
       </provider>
     </entry>

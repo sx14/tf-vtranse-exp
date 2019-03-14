@@ -13,7 +13,7 @@ N_each_batch = cfg.VRD_BATCH_NUM_RELA
 lr_init = cfg.VRD_LR_INIT
 
 index_sp = False
-index_cls = False
+index_cls = True
 
 vnet = VTranse()
 vnet.create_graph(N_each_batch, index_sp, index_cls, N_cls, N_rela)
