@@ -1,3 +1,4 @@
+# coding=utf-8
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -27,12 +28,17 @@ class VTranse(object):
 		self.scope = 'vgg_16'
 
 	def create_graph(self, N_each_batch, index_sp, index_cls, num_classes, num_predicates):
+		# 输入
 		self.image = tf.placeholder(tf.float32, shape=[1, None, None, 3])
 		self.sbox = tf.placeholder(tf.float32, shape=[N_each_batch, 4])
 		self.obox = tf.placeholder(tf.float32, shape=[N_each_batch, 4])
+
+		# 位置特征
 		self.sub_sp_info = tf.placeholder(tf.float32, shape=[N_each_batch, 4])
 		self.ob_sp_info = tf.placeholder(tf.float32, shape=[N_each_batch, 4])
 		self.rela_label = tf.placeholder(tf.int32, shape=[N_each_batch,])
+
+		# others
 		self.keep_prob = tf.placeholder(tf.float32)
 		self.index_sp = index_sp
 		self.index_cls = index_cls
@@ -40,11 +46,14 @@ class VTranse(object):
 		self.num_predicates = num_predicates
 		self.N_each_batch = N_each_batch
 
+		# 物体分类网络
 		self.build_dete_network()
+
+		# 关系分类网络
 		self.build_rd_network()
 		self.add_rd_loss()
 
-
+	# 物体分类网络
 	def build_dete_network(self, is_training=True):
 		net_conv = self.image_to_head(is_training)
 		sub_pool5 = self.crop_pool_layer(net_conv, self.sbox, "sub_pool5")
@@ -59,6 +68,8 @@ class VTranse(object):
 			# region classification
 			ob_cls_prob, ob_cls_pred = self.region_classification(ob_fc7, is_training, reuse = True)
 
+
+		# sbj, obj 分类结果
 		self.predictions['sub_cls_prob'] = sub_cls_prob
 		self.predictions['sub_cls_pred'] = sub_cls_pred
 		self.predictions['ob_cls_prob'] = ob_cls_prob
@@ -68,7 +79,14 @@ class VTranse(object):
 		self.layers['sub_fc7'] = sub_fc7
 		self.layers['ob_fc7'] = ob_fc7
 
+	# image CNN
 	def image_to_head(self, is_training, reuse=False):
+		"""
+		全图CNN特征
+		:param is_training:
+		:param reuse:
+		:return:
+		"""
 		with tf.variable_scope(self.scope, self.scope, reuse=reuse):
 			net = slim.repeat(self.image, 2, slim.conv2d, 64, [3, 3], 
 				trainable=is_training, scope='conv1')
@@ -88,6 +106,7 @@ class VTranse(object):
 			self.layers['head'] = net_conv
 			return net_conv
 
+	# fully connected
 	def head_to_tail(self, pool5, is_training, reuse=False):
 		with tf.variable_scope(self.scope, self.scope, reuse=reuse):
 			pool5_flat = slim.flatten(pool5, scope='flatten')
@@ -100,6 +119,7 @@ class VTranse(object):
 
 			return fc7
 
+	# ROI pooling
 	def crop_pool_layer(self, bottom, rois, name):
 		"""
 		Notice that the input rois is a N*4 matrix, and the coordinates of x,y should be original x,y times im_scale. 
@@ -122,7 +142,7 @@ class VTranse(object):
 			pooling = max_pool(crops, 2, 2, 2, 2, name="max_pooling")
 		return pooling
 
-
+	# 线性分类器
 	def region_classification(self, fc7, is_training, reuse = False):
 		cls_score = slim.fully_connected(fc7, self.num_classes, 
 										 activation_fn=None, scope='cls_score', reuse=reuse)
@@ -132,11 +152,17 @@ class VTranse(object):
 
 		return cls_prob, cls_pred
 
+	# 关系分类网络
 	def build_rd_network(self):
+		# 位置特征
 		sub_sp_info = self.sub_sp_info
 		ob_sp_info = self.ob_sp_info
+
+		# classme特征
 		sub_cls_prob = self.predictions['sub_cls_prob']
 		ob_cls_prob = self.predictions['ob_cls_prob']
+
+		# fc7特征
 		sub_fc = self.layers['sub_fc7']
 		ob_fc = self.layers['ob_fc7']
 
@@ -155,13 +181,15 @@ class VTranse(object):
 		rela_score = slim.fully_connected(dif_fc1, self.num_predicates, 
 										 activation_fn=None, scope='RD_fc2')
 		rela_prob = tf.nn.softmax(rela_score)
+
+		# relation 预测结果
 		self.layers['rela_score'] = rela_score
 		self.layers['rela_prob'] = rela_prob
 
 	def add_rd_loss(self):
 		rela_score = self.layers['rela_score']
 		rela_prob = self.layers['rela_prob']
-		rela_label = self.rela_label
+		rela_label = self.rela_label # gt
 		rd_loss = tf.reduce_mean( tf.nn.sparse_softmax_cross_entropy_with_logits(
 									labels = rela_label, logits = rela_score) )
 		self.losses['rd_loss'] = rd_loss

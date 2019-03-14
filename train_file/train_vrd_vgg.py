@@ -1,3 +1,4 @@
+# coding=utf-8
 #for build_rd_network2
 from __future__ import absolute_import
 from __future__ import division
@@ -8,19 +9,22 @@ from model.config import cfg
 from model.ass_fun import *
 from net.vtranse_vgg import VTranse
 
-N_cls = cfg.VRD_NUM_CLASS
-N_rela = cfg.VRD_NUM_RELA
-N_each_batch = cfg.VRD_BATCH_NUM
-lr_init = cfg.VRD_LR_INIT
+N_cls = cfg.VRD_NUM_CLASS	# 101
+N_rela = cfg.VRD_NUM_RELA	# 70
+N_each_batch = cfg.VRD_BATCH_NUM	# 30
+lr_init = cfg.VRD_LR_INIT 	# 0.00001
 
 
-index_sp = False
-index_cls = False
+index_sp = False	# 不使用位置特征
+index_cls = False	# 不使用classme特征
 
+# 初始化网络
 vnet = VTranse()
 vnet.create_graph(N_each_batch, index_sp, index_cls, N_cls, N_rela)
 
+# 数据集
 roidb_path = cfg.DIR + 'vtranse/input/vrd_roidb.npz'
+# VRD 预训练 faster-RCNN
 res_path = cfg.DIR + 'vtranse/pretrained_para/vrd_vgg_pretrained.ckpt'
 
 roidb_read = read_roidb(roidb_path)
@@ -33,7 +37,9 @@ N_show = 100
 N_save = N_train
 N_val = N_test
 
+# 所有权重
 total_var = tf.trainable_variables()
+# 预训练权重，加载
 restore_var = [var for var in total_var if 'vgg_16' in var.name]
 cls_score_var = [var for var in total_var if 'cls_score' in var.name]
 res_var = [item for item in restore_var if item not in cls_score_var]
@@ -51,6 +57,8 @@ train_loss = vnet.losses['rd_loss']
 RD_train = optimizer.minimize(train_loss, var_list = RD_var)
 
 with tf.Session() as sess:
+
+	# 加载权重
 	init = tf.global_variables_initializer()
 	sess.run(init)
 	saver_res.restore(sess, res_path)

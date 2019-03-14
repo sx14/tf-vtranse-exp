@@ -1,3 +1,4 @@
+# coding: utf-8
 # data for predicate detection
 import numpy as np 
 import xlwt
@@ -7,6 +8,7 @@ from model.config import cfg
 from model.ass_fun import *
 import json
 
+# 每个batch对应一副图片，包含N个样本（不足则重复）
 N_each_pred = cfg.VRD_BATCH_NUM
 
 train_file_path = cfg.DIR + 'dataset/VRD/json_dataset/annotations_train.json'
@@ -31,11 +33,14 @@ for r in range(2):
 			if (image_id+1)%1000 == 0:
 				print('image id is {0}'.format(image_id+1))
 			roidb_temp = {}
+
+			# 加载图片
 			image_full_path = image_path_use + image_name[image_id]
 			im = cv2.imread(image_full_path)
 			if type(im) == type(None):
 				continue
 
+			# 图片尺寸
 			im_shape = np.shape(im)
 			im_h = im_shape[0]
 			im_w = im_shape[1]
@@ -44,23 +49,33 @@ for r in range(2):
 			roidb_temp['width'] = im_w
 			roidb_temp['height'] = im_h
 
+			# 加载图片标注数据
 			d = data[image_name[image_id]]
+
+			# 标注relationship个数
 			relation_length = len(d)
 			if relation_length == 0:
 				continue
+
+			# 保存sbj,obj box
 			sb_new = np.zeros(shape=[relation_length,4])
 			ob_new = np.zeros(shape=[relation_length,4])
+
+			# 保存pre, sbj, obj类别
 			rela = np.zeros(shape=[relation_length,])
 			obj = np.zeros(shape=[relation_length,])
 			subj = np.zeros(shape=[relation_length,])
 
+			# 每一个relationship
 			for relation_id in range(relation_length):
 				relation = d[relation_id]
 
+				# 类别
 				obj[relation_id] = relation['object']['category']
 				subj[relation_id] = relation['subject']['category']
 				rela[relation_id] = relation['predicate']
 
+				# sbj, obj boxes
 				ob_temp = relation['object']['bbox']
 				sb_temp = relation['subject']['bbox']
 				ob = [ob_temp[0],ob_temp[1],ob_temp[2],ob_temp[3]]

@@ -316,6 +316,8 @@ def test_net_vg(sess, net, roidb, output_dir, num_classes, max_per_image=100, th
     dete_pred_temp['pred_boxes'] = pred_boxes
     dete_pred.append(dete_pred_temp)
 
+
+
   np.savez(output_dir,dete_pred_vg = dete_pred)
   return dete_pred
 
