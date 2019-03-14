@@ -4,7 +4,7 @@ import numpy as np
 import cv2
 import os
 from model.config import cfg
-
+from hier.pre_hier import prenet
 
 def generate_batch(N_total, N_each):
     """
@@ -190,6 +190,9 @@ def pred_recall(test_roidb, pred_roidb, N_recall):
 
 
 def rela_recall(test_roidb, pred_roidb, N_recall):
+
+    raw_labels = prenet.get_raw_labels()[1:]
+
     N_right = 0.0
     N_total = 0.0
     N_data = len(test_roidb)
@@ -232,12 +235,21 @@ def rela_recall(test_roidb, pred_roidb, N_recall):
                 s_iou = compute_iou_each(sub_box_dete[j], sub_box_gt[k])
                 o_iou = compute_iou_each(obj_box_dete[j], obj_box_gt[k])
                 if (s_iou >= 0.5) and (o_iou >= 0.5):
-                    if (sub_gt[k] == sub_dete[j]) and (obj_gt[k] == obj_dete[j]) and (rela_gt[k] == pred_rela[j]):
-                        detected_gt[k] = 1
-                        N_right = N_right + 1
+
+                    rela_gt_label = raw_labels[rela_gt[k]]
+                    rela_gt_node = prenet.get_node_by_name(rela_gt_label)
+
+                    pred_rela_label = raw_labels[pred_rela[j]]
+                    pred_rela_node = prenet.get_node_by_name(pred_rela_label)
+
+                    score = rela_gt_node.score(pred_rela_node.index())
+
+                    if (sub_gt[k] == sub_dete[j]) and (obj_gt[k] == obj_dete[j]) and score > 0:
+                        detected_gt[k] = score
+                        N_right = N_right + score
                         num_right[i] = num_right[i] + 1
-                    else:
-                        detected_gt[k] = 1
+                    # else:
+                    #     detected_gt[k] = 1
 
     acc = N_right / N_total
     print(N_right)
