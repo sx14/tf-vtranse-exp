@@ -236,10 +236,10 @@ def rela_recall(test_roidb, pred_roidb, N_recall):
                 o_iou = compute_iou_each(obj_box_dete[j], obj_box_gt[k])
                 if (s_iou >= 0.5) and (o_iou >= 0.5):
 
-                    rela_gt_label = raw_labels[rela_gt[k]]
+                    rela_gt_label = raw_labels[int(rela_gt[k])]
                     rela_gt_node = prenet.get_node_by_name(rela_gt_label)
 
-                    pred_rela_label = raw_labels[pred_rela[j]]
+                    pred_rela_label = raw_labels[int(pred_rela[j])]
                     pred_rela_node = prenet.get_node_by_name(pred_rela_label)
 
                     score = rela_gt_node.score(pred_rela_node.index())
