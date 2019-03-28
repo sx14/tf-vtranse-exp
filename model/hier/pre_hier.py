@@ -2,14 +2,13 @@ import os
 from label_hier import LabelHier
 from label_hier import LabelNode
 
-from global_config import PROJECT_ROOT
+from global_config import PROJECT_ROOT, VRD_ROOT
 
 
 class PreNet(LabelHier):
 
     def pos_leaf_sum(self):
-        # overwrite
-
+        # override
         def dfs_count(node):
             if len(node.children()) == 0:
                 return 1
@@ -21,6 +20,41 @@ class PreNet(LabelHier):
 
         root = self.root()
         return dfs_count(root)
+
+    def fill_freq(self, pre_freq_path):
+        def dfs_fill_freq(node):
+            if node.is_raw():
+                freq_sum = node.freq()
+            else:
+                freq_sum = 0.0
+
+            for c in node.children():
+                freq_sum += dfs_fill_freq(c)
+
+            node.set_freq(freq_sum)
+            return freq_sum
+
+        if not os.path.exists(pre_freq_path):
+            print('[WARNING] PreNet: pre_freq.txt not exists. Run vrd/run.py first.')
+            return 1.0
+
+        with open(pre_freq_path) as f:
+            # raw_pre 0.25
+            pre_freqs = [l.strip() for l in f.readlines()]
+
+        # fill freq for raw nodes
+        for pre_freq in pre_freqs:
+            pre = pre_freq.split('|')[0]
+            freq = float(pre_freq.split('|')[1])
+            node = self.get_node_by_name(pre)
+            node.set_freq(freq)
+
+        freq_sum = dfs_fill_freq(self.root())
+        assert 1.001 > freq_sum > 0.999
+
+
+
+
 
     def _construct_hier(self):
         # root node
@@ -41,8 +75,9 @@ class PreNet(LabelHier):
 
         # basic level
         basic_level = {
-            'on.s': 'spatial.a',
+            'follow.i': 'interact.a',
             'wear.i': 'interact.a',
+            'on.s': 'spatial.a',
             'has.p': 'possess.a',
             'behind.s': 'spatial.a',
             'in the front of.s': 'spatial.a',
@@ -108,12 +143,12 @@ class PreNet(LabelHier):
             'walk': 'walk.i',
             'walk past': 'walk.i',
             'in': 'in.s',
-            'below': 'under',
+            'below': 'under.s',
             'walk beside': 'beside',
             'over': 'on.s',
             'hold': 'carry.i',
             'by': 'beside',
-            'beneath': 'under',
+            'beneath': 'under.s',
             'with': 'with.p',
             'on the top of': 'on',
             'on the left of': 'beside',
@@ -148,7 +183,7 @@ class PreNet(LabelHier):
             'play with': 'play with.i',
             'sleep on': 'rest on',
             'outside of': 'outside of.s',
-            'follow': 'behind',
+            'follow': 'follow.i',
             'hit': 'hit.i',
             'feed': 'feed.i',
             'kick': 'kick.i',
@@ -171,20 +206,22 @@ class PreNet(LabelHier):
                 parent_node.add_child(node)
                 next_label_ind += 1
 
-    def __init__(self, raw_label_path):
+    def __init__(self, raw_label_path, pre_freq_path):
         LabelHier.__init__(self, raw_label_path)
+        self.fill_freq(pre_freq_path)
 
 
-label_path = os.path.join(PROJECT_ROOT, 'data', 'VRDdevkit2007', 'VOC2007', 'predicate_labels.txt')
-prenet = PreNet(label_path)
+label_path = os.path.join(VRD_ROOT, 'predicate_labels.txt')
+pre_freq_path = os.path.join(VRD_ROOT, 'pre_freq.txt')
+prenet = PreNet(label_path, pre_freq_path)
 
 # for i in prenet.get_raw_indexes():
 #     n = prenet.get_node_by_index(i)
 #     n.show_hyper_paths()
 #
 # for i in range(prenet.label_sum()):
-#     n = prenet.get_node_by_index(i)
-#     cs = ''
-#     for c in n.children():
-#         cs = cs + ' | ' + c.name()
-#     print(n.name()+ ':' + cs)
+    # n = prenet.get_node_by_index(i)
+    # cs = ''
+    # for c in n.children():
+    #     cs = cs + ' | ' + c.name()
+    # print(n.name()+ ':' + cs)
