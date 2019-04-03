@@ -13,27 +13,23 @@ def get_predicate_box(sbj_box, obj_box):
     y2 = np.max((sbj_box[:, 3:4], obj_box[:, 3:4]), axis=1)
     return np.concatenate((x1, y1, x2, y2), axis=1)
 
-# load image names
-test_file_path = cfg.DIR + 'dataset/VRD/json_dataset/annotations_test.json'
-with open(test_file_path) as f:
-    test_annos = json.load(f)
-img_names = test_annos.keys()
-
 # load predictions
 save_path = cfg.DIR + 'vtranse/pred_res/vrd_pred_roidb.npz'
 with open(save_path, 'rb') as f:
-    pred_roidb = np.load(f)['pred_roidb']
+    pred_roidb = np.load(f)
+    pred_roidb = pred_roidb['roidb']
+    pred_roidb = pred_roidb[()]
+    pred_roidb = pred_roidb['pred_roidb']
+    a = 1
 
 # convert
-assert len(img_names) == len(pred_roidb)
-
 raw_object_labels = objnet.get_raw_labels()
 raw_predicate_labels = objnet.get_raw_labels()[1:]
 
 pred_roidb_sunx = {}
-for i in range(len(img_names)):
+for i in range(len(pred_roidb)):
     roidb_use = pred_roidb[i]
-    img_id = img_names[i].split('.')[0]
+    img_id = roidb_use['image_path'].split('/')[-1].split('.')[0]
     sbj_box = roidb_use['sub_box_dete']
     sbj_cls = roidb_use['sub_dete']
     obj_box = roidb_use['obj_box_dete']

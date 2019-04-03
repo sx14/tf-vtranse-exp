@@ -42,7 +42,7 @@ with tf.Session() as sess:
 			pred_roidb.append({})
 			continue
 		pred_rela, pred_rela_score = vnet.test_predicate(sess, roidb_use)
-		pred_roidb_temp = {'pred_rela': pred_rela, 'pred_rela_score': pred_rela_score,
+		pred_roidb_temp = {'image_path': roidb_use['image'], 'pred_rela': pred_rela, 'pred_rela_score': pred_rela_score,
 							'sub_box_dete': roidb_use['sub_box_gt'], 'obj_box_dete': roidb_use['obj_box_gt'],
 							'sub_dete': roidb_use['sub_gt'], 'obj_dete': roidb_use['obj_gt']}
 		pred_roidb.append(pred_roidb_temp)
