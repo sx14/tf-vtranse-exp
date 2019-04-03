@@ -6,7 +6,6 @@ gt_roidb_path = cfg.DIR + 'vtranse/input/vrd_rela_roidb.npz'
 pred_roidb_path = cfg.DIR + 'vtranse/pred_res/vrd_rela_roidb.npz'
 
 roidb_read = read_roidb(gt_roidb_path)
-train_roidb = roidb_read['train_roidb']
 test_roidb = roidb_read['test_roidb']
 
 roidb_read = read_roidb(pred_roidb_path)
