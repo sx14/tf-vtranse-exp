@@ -355,8 +355,8 @@ def extract_detected_box(dete_box):
 
 def extract_detected_box_sunx(dete_box):
 	detected_box = dete_box[:, :4]
-	detected_cls = dete_box[:, 5]
-	detected_score = dete_box[:, 6]
+	detected_cls = dete_box[:, 4]
+	detected_score = dete_box[:, 5]
 	return detected_box, detected_cls, detected_score
 
 def extract_roidb_box(roidb):

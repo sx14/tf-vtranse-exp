@@ -44,7 +44,7 @@ with tf.Session() as sess:
 		obj_score = roidb_use['obj_score']
 		for ii in range(len(pred_rela_score)):
 			pred_rela_score[ii] = pred_rela_score[ii]*sub_score[ii]*obj_score[ii]
-		pred_roidb_temp = {'pred_rela': pred_rela, 'pred_rela_score': pred_rela_score,
+		pred_roidb_temp = {'image_path': roidb_use['image'], 'pred_rela': pred_rela, 'pred_rela_score': pred_rela_score,
 							'sub_box_dete': roidb_use['sub_box_dete'], 'obj_box_dete': roidb_use['obj_box_dete'],
 							'sub_dete': roidb_use['sub_dete']-1, 'obj_dete': roidb_use['obj_dete']-1}
 		pred_roidb.append(pred_roidb_temp)
