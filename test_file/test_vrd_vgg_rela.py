@@ -22,9 +22,7 @@ model_path = cfg.DIR + 'vtranse/pred_para/vrd_vgg_rela/vrd_vgg0020.ckpt'
 save_path = cfg.DIR + 'vtranse/pred_res/vrd_rela_roidb.npz'
 
 roidb_read = read_roidb(roidb_path)
-train_roidb = roidb_read['train_roidb']
 test_roidb = roidb_read['test_roidb']
-N_train = len(train_roidb)
 N_test = len(test_roidb)
 
 saver = tf.train.Saver()

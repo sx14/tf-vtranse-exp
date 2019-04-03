@@ -353,6 +353,12 @@ def extract_detected_box(dete_box):
 	detected_score = detected_score[0:t]
 	return detected_box, detected_cls, detected_score
 
+def extract_detected_box_sunx(dete_box):
+	detected_box = dete_box[:, :4]
+	detected_cls = dete_box[:, 5]
+	detected_score = dete_box[:, 6]
+	return detected_box, detected_cls, detected_score
+
 def extract_roidb_box(roidb):
 	sbox = roidb['sub_box_gt']
 	obox = roidb['obj_box_gt']
@@ -428,7 +434,7 @@ def generate_train_rela_roidb(roidb, dete_box, iou_l, N_each_batch, N_each_pair)
 	return roidb_temp
 
 def generate_test_rela_roidb(roidb, dete_box, N_each_batch):
-	detected_box, detected_cls, detected_score = extract_detected_box(dete_box)
+	detected_box, detected_cls, detected_score = extract_detected_box_sunx(dete_box)
 	N_dete = len(detected_box)
 	sub_box_dete = np.zeros([N_dete*(N_dete-1),4])
 	obj_box_dete = np.zeros([N_dete*(N_dete-1),4])
