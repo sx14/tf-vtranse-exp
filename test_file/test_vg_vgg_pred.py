@@ -17,7 +17,7 @@ index_cls = False
 vnet = VTranse()
 vnet.create_graph(N_each_batch, index_sp, index_cls, N_cls, N_rela)
 
-roidb_path = cfg.DIR + 'vtranse/input/vg_roidb2.npz'
+roidb_path = cfg.DIR + 'vtranse/input/vg_roidb.npz'
 model_path = cfg.DIR + 'vtranse/pred_para/vg_vgg/vg_vgg0010.ckpt'
 save_path = cfg.DIR + 'vtranse/pred_res/vg_pred_roidb.npz'
 
@@ -50,7 +50,7 @@ roidb = {}
 roidb['pred_roidb'] = pred_roidb
 np.savez(save_path, roidb=roidb)
 
-gt_roidb_path = cfg.DIR + 'vtranse/input/vg_roidb2.npz'
+gt_roidb_path = cfg.DIR + 'vtranse/input/vg_roidb.npz'
 pred_roidb_path = cfg.DIR + 'vtranse/pred_res/vg_pred_roidb.npz'
 
 roidb_read = read_roidb(gt_roidb_path)

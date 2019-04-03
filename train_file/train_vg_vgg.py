@@ -22,7 +22,7 @@ index_cls = False
 vnet = VTranse()
 vnet.create_graph(N_each_batch, index_sp, index_cls, N_cls, N_rela)
 
-roidb_path = cfg.DIR + 'vtranse/input/vg_roidb2.npz'
+roidb_path = cfg.DIR + 'vtranse/input/vg_roidb.npz'
 res_path = cfg.DIR + 'vtranse/pretrained_para/vg_vgg_pretrained.ckpt'
 
 roidb_read = read_roidb(roidb_path)

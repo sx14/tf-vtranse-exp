@@ -9,7 +9,7 @@ N_each_pred = cfg.VG_BATCH_NUM
 
 file_path = cfg.DIR + 'dataset/VG/vg1_2_meta.h5'
 image_path = cfg.DIR + 'dataset/VG/JPEGImages/'
-save_path = cfg.DIR + 'vtranse/input/vg_roidb2.npz'
+save_path = cfg.DIR + 'vtranse/input/vg_roidb.npz'
 hdf5_path = ['gt/train/','gt/test/']
 f = h5py.File(file_path, "r")
 
