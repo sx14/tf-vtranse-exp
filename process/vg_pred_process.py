@@ -5,10 +5,10 @@ import cv2
 from model.config import cfg 
 from model.ass_fun import *
 
-N_each_pred = cfg.VG_BATCH_NUM2
+N_each_pred = cfg.VG_BATCH_NUM
 
 file_path = cfg.DIR + 'dataset/VG/vg1_2_meta.h5'
-image_path = cfg.DIR + 'dataset/VG/JPEGImages'
+image_path = cfg.DIR + 'dataset/VG/JPEGImages/'
 save_path = cfg.DIR + 'vtranse/input/vg_roidb2.npz'
 hdf5_path = ['gt/train/','gt/test/']
 f = h5py.File(file_path, "r")

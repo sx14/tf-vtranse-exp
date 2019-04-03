@@ -13,7 +13,7 @@ N_each_batch = cfg.VG_BATCH_NUM
 N_round = cfg.VG_TRAIN_ROUND 
 lr_init = cfg.VG_LR_INIT
 N_show = 500
-N_save = 10000
+N_save = 100000
 N_val = 2000
 
 index_sp = False
@@ -22,7 +22,7 @@ index_cls = False
 vnet = VTranse()
 vnet.create_graph(N_each_batch, index_sp, index_cls, N_cls, N_rela)
 
-roidb_path = cfg.DIR + 'vtranse/input/vg_roidb.npz'
+roidb_path = cfg.DIR + 'vtranse/input/vg_roidb2.npz'
 res_path = cfg.DIR + 'vtranse/pretrained_para/vg_vgg_pretrained.ckpt'
 
 roidb_read = read_roidb(roidb_path)
