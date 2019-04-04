@@ -13,6 +13,8 @@ def get_predicate_box(sbj_box, obj_box):
 
 
 dataset = 'vg'
+target = 'rela'
+
 if dataset == 'vrd':
     from model.hier.vrd.pre_hier import prenet
     from model.hier.vrd.obj_hier import objnet
@@ -21,7 +23,10 @@ else:
     from model.hier.vg.obj_hier import objnet
 
 # load predictions
-save_path = cfg.DIR + 'vtranse/pred_res/%s_pred_roidb.npz' % dataset
+if target == 'pre':
+    save_path = cfg.DIR + 'vtranse/pred_res/%s_pred_roidb.npz' % dataset
+else:
+    save_path = cfg.DIR + 'vtranse/pred_res/%s_rela_roidb.npz' % dataset
 with open(save_path, 'rb') as f:
     pred_roidb = np.load(f)
     pred_roidb = pred_roidb['roidb']
@@ -67,6 +72,6 @@ for i in range(len(pred_roidb)):
                             pre_conf[:, np.newaxis]), axis=1)
     pred_roidb_sunx[img_id] = preds
 
-save_path = 'pre_box_label_%s_vts.bin' % dataset
+save_path = '%s_box_label_%s_vts.bin' % (target, dataset)
 with open(save_path, 'wb') as f:
     pickle.dump(pred_roidb_sunx, f)
