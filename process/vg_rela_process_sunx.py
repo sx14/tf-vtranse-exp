@@ -6,14 +6,30 @@ import scipy.io
 from model.config import cfg
 from model.ass_fun import *
 
+from model.hier.vg.obj_hier import objnet
+
 
 def read_vg_det(det_roidb, test_roidb):
+    raw_labels = objnet.get_raw_labels()
     N_test = len(test_roidb)
     test_det_roidb = []
     for i in range(N_test):
         test_roidb_use = test_roidb[i]
         img_id = test_roidb_use['image'].split('/')[-1].split('.')[0]
-        test_det_roidb.append(det_roidb[img_id])
+        det_roidb_use = det_roidb[img_id]
+        # box, cls, conf
+        for i in range(det_roidb_use.shape[0]):
+            h_ind = det_roidb_use[i, 4]
+            h_node = objnet.get_node_by_index(h_ind)
+            find = False
+            for ri, raw_label in enumerate(raw_labels):
+                if raw_label == h_node.name():
+                    find = True
+                    break
+            assert find
+            det_roidb_use[i, 4] = ri
+
+        test_det_roidb.append(det_roidb_use)
     return test_det_roidb
 
 
