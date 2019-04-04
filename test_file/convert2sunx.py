@@ -1,9 +1,7 @@
-import json
 import pickle
 import numpy as np
 from model.config import cfg
-from model.hier.pre_hier import prenet
-from model.hier.obj_hier import objnet
+
 
 
 def get_predicate_box(sbj_box, obj_box):
@@ -13,10 +11,17 @@ def get_predicate_box(sbj_box, obj_box):
     y2 = np.max((sbj_box[:, 3:4], obj_box[:, 3:4]), axis=0)
     return np.concatenate((x1, y1, x2, y2), axis=1)
 
+
 dataset = 'vg'
+if dataset == 'vrd':
+    from model.hier.vrd.pre_hier import prenet
+    from model.hier.vrd.obj_hier import objnet
+else:
+    from model.hier.vg.pre_hier import prenet
+    from model.hier.vg.obj_hier import objnet
 
 # load predictions
-save_path = cfg.DIR + 'vtranse/pred_res/_pred_roidb.npz' % dataset
+save_path = cfg.DIR + 'vtranse/pred_res/%s_pred_roidb.npz' % dataset
 with open(save_path, 'rb') as f:
     pred_roidb = np.load(f)
     pred_roidb = pred_roidb['roidb']

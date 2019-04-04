@@ -2,9 +2,8 @@
 
 import numpy as np
 import cv2
-import os
 from model.config import cfg
-from hier.pre_hier import prenet
+from model.hier.vrd.pre_hier import prenet
 
 def generate_batch(N_total, N_each):
     """
