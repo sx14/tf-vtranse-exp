@@ -47,7 +47,7 @@ with tf.Session() as sess:
 		obj_score = roidb_use['obj_score']
 		for ii in range(len(pred_rela_score)):
 			pred_rela_score[ii] = pred_rela_score[ii]*sub_score[ii]*obj_score[ii]
-		pred_roidb_temp = {'pred_rela': pred_rela, 'pred_rela_score': pred_rela_score,
+		pred_roidb_temp = {'image_path': roidb_use['image'], 'pred_rela': pred_rela, 'pred_rela_score': pred_rela_score,
 							'sub_box_dete': roidb_use['sub_box_dete'], 'obj_box_dete': roidb_use['obj_box_dete'],
 							'sub_dete': roidb_use['sub_dete'], 'obj_dete': roidb_use['obj_dete']}
 		pred_roidb.append(pred_roidb_temp)
@@ -55,22 +55,3 @@ with tf.Session() as sess:
 roidb = {}
 roidb['pred_roidb'] = pred_roidb
 np.savez(save_path, roidb=roidb)
-
-gt_roidb_path = cfg.DIR + 'vtranse/input/vg_rela_roidb.npz'
-pred_roidb_path = cfg.DIR + 'vtranse/pred_res/vg_rela_roidb.npz'
-
-roidb_read = read_roidb(gt_roidb_path)
-train_roidb = roidb_read['train_roidb']
-test_roidb = roidb_read['test_roidb']
-
-roidb_read = read_roidb(pred_roidb_path)
-pred_roidb = roidb_read['pred_roidb']
-
-rela_R50, rela_num_right50 = rela_recall(test_roidb, pred_roidb, 50)
-rela_R100, rela_num_right100 = rela_recall(test_roidb, pred_roidb, 100)
-
-phrase_R50, phrase_num_right50 = phrase_recall(test_roidb, pred_roidb, 50)
-phrase_R100, phrase_num_right100 = phrase_recall(test_roidb, pred_roidb, 100)
-
-print('rela_R50: {0}, rela_R100: {1}'.format(rela_R50, rela_R100))
-print('phrase_R50: {0}, phrase_R100: {1}'.format(phrase_R50, phrase_R100))
