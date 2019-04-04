@@ -13,8 +13,10 @@ def get_predicate_box(sbj_box, obj_box):
     y2 = np.max((sbj_box[:, 3:4], obj_box[:, 3:4]), axis=0)
     return np.concatenate((x1, y1, x2, y2), axis=1)
 
+dataset = 'vg'
+
 # load predictions
-save_path = cfg.DIR + 'vtranse/pred_res/vrd_pred_roidb.npz'
+save_path = cfg.DIR + 'vtranse/pred_res/_pred_roidb.npz' % dataset
 with open(save_path, 'rb') as f:
     pred_roidb = np.load(f)
     pred_roidb = pred_roidb['roidb']
@@ -58,6 +60,6 @@ for i in range(len(pred_roidb)):
                             pre_conf[:, np.newaxis]), axis=1)
     pred_roidb_sunx[img_id] = preds
 
-save_path = 'pre_box_label_vrd_vts.bin'
+save_path = 'pre_box_label_%s_vts.bin' % dataset
 with open(save_path, 'wb') as f:
     pickle.dump(pred_roidb_sunx, f)
