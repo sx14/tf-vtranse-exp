@@ -7,6 +7,14 @@ from model.config import cfg
 from model.ass_fun import *
 
 
+def read_vg_det(det_roidb, test_roidb):
+    N_test = len(test_roidb)
+    test_det_roidb = []
+    for i in range(N_test):
+        test_roidb_use = test_roidb[i]
+        img_id = test_roidb_use['image'].split('/')[-1].split('.')[0]
+        test_det_roidb.append(det_roidb[img_id])
+    return test_det_roidb
 
 
 
@@ -21,7 +29,8 @@ roidb_read = read_roidb(roidb_path)
 test_roidb = roidb_read['test_roidb']
 
 with open(detected_box_path, 'rb') as f:
-    test_detected_box = pickle.load(f)
+    det_roidb = pickle.load(f)
+test_detected_box = read_vg_det(det_roidb, test_roidb)
 
 N_test = len(test_roidb)
 
