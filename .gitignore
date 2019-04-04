@@ -7,3 +7,4 @@
 model/config.py
 workspace.xml
 *.mat
+*.bin

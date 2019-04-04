@@ -14,7 +14,7 @@ N_each_batch = cfg.VRD_BATCH_NUM_RELA
 N_each_pair = cfg.VRD_AU_PAIR
 iou_l = cfg.VRD_IOU_TRAIN
 roidb_path = cfg.DIR + 'vtranse/input/vg_roidb.npz'
-detected_box_path = cfg.DIR + 'vtranse/input/det_roidb_vg.bin'
+detected_box_path = 'det_roidb_vg.bin'
 save_path = cfg.DIR + 'vtranse/input/vg_rela_roidb.npz'
 
 roidb_read = read_roidb(roidb_path)
