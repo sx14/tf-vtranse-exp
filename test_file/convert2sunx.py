@@ -29,7 +29,9 @@ with open(save_path, 'rb') as f:
     pred_roidb = pred_roidb['pred_roidb']
 
 # convert
-raw_object_labels = objnet.get_raw_labels()[1:]
+# object class 1 base
+# predicate class 0 base
+raw_object_labels = objnet.get_raw_labels()
 raw_predicate_labels = prenet.get_raw_labels()[1:]
 
 pred_roidb_sunx = {}

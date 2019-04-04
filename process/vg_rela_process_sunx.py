@@ -20,7 +20,7 @@ def read_vg_det(det_roidb, test_roidb):
         # box, cls, conf
         for i in range(det_roidb_use.shape[0]):
             h_ind = det_roidb_use[i, 4]
-            h_node = objnet.get_node_by_index(h_ind)
+            h_node = objnet.get_node_by_index(int(h_ind))
             find = False
             for ri, raw_label in enumerate(raw_labels):
                 if raw_label == h_node.name():
